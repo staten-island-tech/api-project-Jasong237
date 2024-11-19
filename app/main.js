@@ -2,15 +2,14 @@ import "./style.css";
 // get data
 // promises
 //show data
+//I did NOT add files upon upload
 const DOMSelectors = {
   container: document.querySelector(".container"),
 };
 async function getData() {
   try {
     //returns a promise
-    const response = await fetch(
-      "https://date.nager.at/api/v3/PublicHolidays/2024/US"
-    );
+    const response = await fetch("https://dummyjson.com/quotes/random/10");
     //guard clause
     if (response.status > 200) {
       throw new Error(response);
@@ -20,8 +19,7 @@ async function getData() {
       console.log(data);
       //unique to this api
 
-      data.forEach((date) => console.log(date.name));
-      addCards();
+      data.forEach((quote) => addCards(quote));
     }
   } catch (error) {
     alert("hey I could not find that agent");
@@ -30,14 +28,12 @@ async function getData() {
 
 getData();
 
-function addCards(event) {
-  event.preventDefault();
+function addCards(quote) {
   DOMSelectors.container.insertAdjacentHTML(
     "afterbegin",
     `
-    coj
     <div class="card">
-    <h1> ${date.name}</h1>
+    <h2 class="quote"> ${quote.quote} </h2>
     </div>
     `
   );

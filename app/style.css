@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.container{
+
+}
+
 .card {
     height: 600px;
     width: 350px;
@@ -15,8 +19,7 @@
     justify-content: space-around;
 }
 
-
-.card-header {
-    font-size: 600%;
+.quote {
+    font-size: 60%;
     margin-top: 10px;
 }
