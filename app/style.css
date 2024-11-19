@@ -7,9 +7,9 @@
 }
 
 .card {
-    height: 600px;
+    height: 200px;
     width: 350px;
-    border: 20px solid black;
+    border: 10px solid black;
     background-color: darkgrey;
     border-radius: 20px;
     display: flex;
@@ -17,9 +17,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .quote {
-    font-size: 60%;
-    margin-top: 10px;
+    font-size: 100%;
+    text-align: center;
 }
