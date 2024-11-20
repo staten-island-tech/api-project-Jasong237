@@ -2,14 +2,16 @@ import "./style.css";
 // get data
 // promises
 //show data
-//I did NOT add files upon upload
+//I did NOT create files via upload
 const DOMSelectors = {
   container: document.querySelector(".container"),
 };
+
 async function getData() {
   try {
     //returns a promise
     const response = await fetch("https://dummyjson.com/quotes/random/10");
+    console.log("response", response);
     //guard clause
     if (response.status > 200) {
       throw new Error(response);
@@ -22,7 +24,7 @@ async function getData() {
       data.forEach((quote) => addCards(quote));
     }
   } catch (error) {
-    alert("hey I could not find that agent");
+    alert(error);
   }
 }
 
