@@ -4,7 +4,7 @@ import "./style.css";
 //show data
 //I did NOT create files via upload
 const DOMSelectors = {
-  container: document.querySelector(".container"),
+  container: document.querySelector(".card-body"),
 };
 
 async function getData() {
@@ -34,8 +34,9 @@ function addCards(quote) {
   DOMSelectors.container.insertAdjacentHTML(
     "afterbegin",
     `
-    <div class="card">
-    <h2 class="quote"> ${quote.quote} </h2>
+    <div class="card bg-base-100 w-96 h-100 shadow-xl">
+    <div class="card-title"> Random Quote </div>
+    <h2 class="card-normal"> ${quote.quote} </h2>
     </div>
     `
   );
