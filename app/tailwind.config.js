@@ -5,7 +5,23 @@ module.exports = {
     extend: {},
   },
   daisyui: {
-    themes: [""],
+    themes: [
+      {
+        forest: {
+          ...require("daisyui/src/theming/themes")["forest"],
+          ".container": {},
+          ".card": {
+            width: "500px",
+            height: "700px",
+            "border-width": "10px",
+            "border-color": "rgb(25,50,20)",
+          },
+          ".card-title": {
+            "text-align": "center",
+          },
+        },
+      },
+    ],
   },
   plugins: [require("daisyui")],
 };

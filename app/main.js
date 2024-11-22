@@ -34,7 +34,7 @@ function addCards(quote) {
   DOMSelectors.container.insertAdjacentHTML(
     "afterbegin",
     `
-    <div class="card bg-base-100 w-96 h-100 shadow-xl">
+    <div class="card bg-neutral shadow-xl">
     <div class="card-title"> Random Quote </div>
     <h2 class="card-normal"> ${quote.quote} </h2>
     </div>
