@@ -19,6 +19,10 @@ module.exports = {
           ".card-title": {
             "text-align": "center",
           },
+          ".card-normal": {
+            "font-size": "50px",
+            "text-align": "center",
+          },
         },
       },
     ],

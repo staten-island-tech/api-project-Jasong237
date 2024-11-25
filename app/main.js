@@ -5,12 +5,15 @@ import "./style.css";
 //I did NOT create files via upload
 const DOMSelectors = {
   container: document.querySelector(".card-body"),
+  button: document.querySelector("button"),
+  id: document.querySelector(".id"),
 };
+let URL = "https://dummyjson.com/quotes/random/10";
 
 async function getData() {
   try {
     //returns a promise
-    const response = await fetch("https://dummyjson.com/quotes/random/10");
+    const response = await fetch(URL);
     console.log("response", response);
     //guard clause
     if (response.status > 200) {
@@ -32,15 +35,26 @@ getData();
 
 function addCards(quote) {
   DOMSelectors.container.insertAdjacentHTML(
-    "afterbegin",
+    "beforeend",
     `
     <div class="card bg-neutral shadow-xl">
-    <div class="card-title"> Random Quote </div>
+    <h1 class="card-title"> ${quote.author} </h1>
     <h2 class="card-normal"> ${quote.quote} </h2>
+    <p class="card-id"> ID: ${quote.id} </p>
     </div>
     `
   );
 }
+
+function findCard(event) {
+  event.preventDefault();
+  console.log("hello");
+  return {
+    id: DOMSelectors.input.value,
+  };
+}
+
+DOMSelectors.button.addEventListener("submit", findCard);
 
 // test fetch call to get data
 // if coors is yes try again?
