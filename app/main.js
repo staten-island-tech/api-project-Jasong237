@@ -5,9 +5,10 @@ import "./style.css";
 //I did NOT create files via upload
 const DOMSelectors = {
   container: document.querySelector(".card-body"),
-  button: document.querySelector("button"),
+  button: document.querySelector(".button"),
   id: document.querySelector(".id"),
 };
+
 let URL = "https://dummyjson.com/quotes/random/10";
 
 async function getData() {
@@ -48,13 +49,36 @@ function addCards(quote) {
 
 function findCard(event) {
   event.preventDefault();
-  console.log("hello");
-  return {
-    id: DOMSelectors.input.value,
-  };
+  if (DOMSelectors.id.value > 0) {
+    searchData();
+  } else {
+    alert("Please enter a number above 0");
+  }
 }
 
-DOMSelectors.button.addEventListener("submit", findCard);
+async function searchData() {
+  let newURL = "https://dummyjson.com/quotes/" + DOMSelectors.id.value;
+  try {
+    //returns a promise
+    const response = await fetch(newURL);
+    console.log("response", response);
+    //guard clause
+    if (response.status > 200) {
+      throw new Error(response);
+    } else {
+      //converst response to json
+      const data = await response.json();
+      console.log(data);
+      //unique to this api
+
+      data.forEach((quote) => addCards(quote));
+    }
+  } catch (error) {
+    alert(error);
+  }
+}
+
+DOMSelectors.button.addEventListener("click", findCard);
 
 // test fetch call to get data
 // if coors is yes try again?
