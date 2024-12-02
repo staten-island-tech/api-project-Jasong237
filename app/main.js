@@ -7,9 +7,12 @@ const DOMSelectors = {
   container: document.querySelector(".card-body"),
   submit: document.querySelector(".submit"),
   id: document.querySelector(".id"),
+  left: document.querySelector(".left"),
+  right: document.querySelector(".right"),
 };
 
-let URL = "https://dummyjson.com/quotes/random/10";
+let URL = "https://dummyjson.com/quotes/random/1";
+let value = "0";
 
 async function getData() {
   try {
@@ -45,11 +48,12 @@ function addCards(quote) {
     </div>
     `
   );
+  value = `${quote.id}`;
 }
 
 function findCard(event) {
   event.preventDefault();
-  if (DOMSelectors.id.value > 1455) {
+  if (DOMSelectors.id.value >= 1455) {
     alert("Our last quote is 1454.");
     return;
   }
@@ -79,7 +83,55 @@ async function searchData() {
   }
 }
 
+function leftCard(event) {
+  event.preventDefault();
+  value--;
+  console.log(value);
+  if (value > 1) {
+    DOMSelectors.container.innerHTML = "";
+    nextData();
+  } else {
+    alert("min ID # is 1.");
+    value = value + 1;
+    return;
+  }
+}
+
+function rightCard(event) {
+  event.preventDefault();
+  value++;
+  console.log(value);
+  if (value < 1455) {
+    DOMSelectors.container.innerHTML = "";
+    nextData();
+  } else {
+    value = value - 1;
+    alert("max ID # is 1454.");
+    return;
+  }
+}
+
+async function nextData() {
+  let newURL = `https://dummyjson.com/quotes/${value}`;
+  try {
+    const response = await fetch(newURL);
+    console.log("response", response);
+
+    if (response.status > 200) {
+      throw new Error(response);
+    } else {
+      const newData = await response.json();
+      console.log(newData);
+      addCards(newData);
+    }
+  } catch (error) {
+    alert(error);
+  }
+}
+
 DOMSelectors.submit.addEventListener("click", findCard);
+DOMSelectors.left.addEventListener("click", leftCard);
+DOMSelectors.right.addEventListener("click", rightCard);
 
 // test fetch call to get data
 // if coors is yes try again?
