@@ -9,7 +9,11 @@ module.exports = {
       {
         forest: {
           ...require("daisyui/src/theming/themes")["forest"],
-          ".container": {},
+
+          ".container": {
+            width: "100%",
+            height: "100%",
+          },
           ".card": {
             width: "50%",
             height: "70%",
@@ -24,6 +28,9 @@ module.exports = {
             "font-size": "50px",
             "text-align": "center",
           },
+          ".card-id": {},
+          ".left": {},
+          ".right": {},
         },
       },
     ],
