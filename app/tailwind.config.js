@@ -11,8 +11,9 @@ module.exports = {
           ...require("daisyui/src/theming/themes")["forest"],
           ".container": {},
           ".card": {
-            width: "500px",
-            height: "700px",
+            width: "50%",
+            height: "70%",
+            "min-height": "700px",
             "border-width": "10px",
             "border-color": "rgb(25,50,20)",
           },
