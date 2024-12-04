@@ -3,6 +3,7 @@ import "./style.css";
 // promises
 //show data
 //I did NOT create files via upload
+
 const DOMSelectors = {
   container: document.querySelector(".card-body"),
   submit: document.querySelector(".submit"),
@@ -41,13 +42,14 @@ function addCards(quote) {
   DOMSelectors.container.insertAdjacentHTML(
     "beforeend",
     `
-    <div class="card bg-neutral shadow-xl">
+    <div class="card border-secondary border-4 bg-primary shadow-xl">
     <h1 class="card-title"> ${quote.author} </h1>
     <h2 class="card-normal"> ${quote.quote} </h2>
     <p class="card-id"> ID: ${quote.id} </p>
     </div>
     `
   );
+
   value = `${quote.id}`;
 }
 

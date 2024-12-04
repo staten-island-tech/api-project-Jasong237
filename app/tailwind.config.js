@@ -10,16 +10,17 @@ module.exports = {
         forest: {
           ...require("daisyui/src/theming/themes")["forest"],
 
+          primary: "rgb(10, 54, 44)",
+          secondary: "#1C360A",
+
           ".container": {
             width: "100%",
             height: "100%",
           },
           ".card": {
-            width: "50%",
+            width: "25%",
             height: "70%",
-            "min-height": "700px",
-            "border-width": "10px",
-            "border-color": "rgb(25,50,20)",
+            "min-height": "70%",
           },
           ".card-title": {
             "text-align": "center",
