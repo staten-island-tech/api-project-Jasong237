@@ -43,8 +43,8 @@ function addCards(quote) {
   DOMSelectors.container.insertAdjacentHTML(
     "beforeend",
     `
-    <div class="card border-secondary border-8 bg-primary shadow-xl">
-    <h1 class="card-title"> ${quote.author} </h1>
+    <div class="card w-[25%] h-[75%] min-h-[45rem] border-secondary border-8 bg-primary shadow-xl hover:animate-pulse animate-hello">
+    <h1 class="card-title font-bold"> ${quote.author} </h1>
     <h2 class="card-normal"> ${quote.quote} </h2>
     <p class="card-id"> ID: ${quote.id} </p>
     </div>

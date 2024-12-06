@@ -2,7 +2,21 @@
 module.exports = {
   content: ["./index.html", "./main.js", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        pulse: {
+          "0%, 100%": { transform: "scale(100%)" },
+          "50%": { transform: "scale(105%)" },
+        },
+        hello: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(0)" },
+        },
+        animation: {
+          hello: "hello 1s ease-in-out",
+        },
+      },
+    },
   },
   daisyui: {
     themes: [
@@ -17,11 +31,7 @@ module.exports = {
             width: "100%",
             height: "100%",
           },
-          ".card": {
-            width: "25%",
-            height: "70%",
-            "min-height": "70%",
-          },
+          ".card": {},
           ".card-title": {
             "text-align": "center",
           },
