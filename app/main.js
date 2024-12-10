@@ -43,7 +43,7 @@ function addCards(quote) {
   DOMSelectors.container.insertAdjacentHTML(
     "beforeend",
     `
-    <div class="card w-[25%] h-[75%] min-h-[45rem] border-secondary border-8 bg-primary shadow-xl hover:animate-pulse animate-hello">
+    <div class="card w-[25%] h-[75%] min-h-[45rem] border-secondary border-8 bg-primary shadow-xl hover:animate-spin animate-pulse">
     <h1 class="card-title font-bold"> ${quote.author} </h1>
     <h2 class="card-normal"> ${quote.quote} </h2>
     <p class="card-id"> ID: ${quote.id} </p>
@@ -146,3 +146,8 @@ DOMSelectors.right.addEventListener("click", rightCard);
 
 // test fetch call to get data
 // if coors is yes try again?
+
+//js file w 60k line array
+// how to filter
+// learn includes, foreach, and filter
+// next tuesday

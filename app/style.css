@@ -14,3 +14,17 @@
   font-size: 50px;
   text-align: center;
 }
+
+animate-spin:hover {
+  transition-duration: 0.5s;
+  animation-iteration-count: 1;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

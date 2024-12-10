@@ -8,12 +8,9 @@ module.exports = {
           "0%, 100%": { transform: "scale(100%)" },
           "50%": { transform: "scale(105%)" },
         },
-        hello: {
-          "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(0)" },
-        },
+        spin: {},
         animation: {
-          hello: "hello 1s ease-in-out",
+          spin: "spin 1s linear",
         },
       },
     },
