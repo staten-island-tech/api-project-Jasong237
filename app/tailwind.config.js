@@ -26,22 +26,6 @@ module.exports = {
 
           primary: "rgb(10, 54, 44)",
           secondary: "#1C360A",
-
-          ".container": {
-            width: "100%",
-            height: "100%",
-          },
-          ".card": {},
-          ".card-title": {
-            "text-align": "center",
-          },
-          ".card-normal": {
-            "font-size": "50px",
-            "text-align": "center",
-          },
-          ".card-id": {},
-          ".left": {},
-          ".right": {},
         },
       },
     ],

@@ -6,15 +6,15 @@ import "./style.css";
 // due tuesday!!
 
 const DOMSelectors = {
-  container: document.querySelector(".card-body"),
+  container: document.querySelector(".flex"),
   submit: document.querySelector(".submit"),
   id: document.querySelector(".id"),
   left: document.querySelector(".left"),
   right: document.querySelector(".right"),
 };
 
-let URL = "https://dummyjson.com/quotes/random/1";
-let value = "0";
+let URL = "https://dummyjson.com/quotes/random/9";
+let value = 0;
 
 async function getData() {
   try {
@@ -50,8 +50,6 @@ function addCards(quote) {
     </div>
     `
   );
-
-  value = `${quote.id}`;
 }
 
 function findCard(event) {
@@ -61,6 +59,7 @@ function findCard(event) {
     return;
   }
   if (DOMSelectors.id.value > 0) {
+    value = `${DOMSelectors.id.value}`;
     DOMSelectors.container.innerHTML = "";
     searchData();
   } else {
@@ -88,20 +87,29 @@ async function searchData() {
 
 function leftCard(event) {
   event.preventDefault();
-  value--;
-  console.log(value);
-  if (value > 1) {
-    DOMSelectors.container.innerHTML = "";
-    nextData();
-  } else {
-    alert("min ID # is 1.");
-    value = value + 1;
+  if (value === 0) {
+    alert("Input an ID # first to use the arrows");
     return;
+  } else {
+    value--;
+    console.log(value);
+    if (value > 0) {
+      DOMSelectors.container.innerHTML = "";
+      nextData();
+    } else {
+      alert("min ID # is 1.");
+      value = value + 1;
+      return;
+    }
   }
 }
 
 function rightCard(event) {
   event.preventDefault();
+  if (value === 0) {
+    alert("Input an ID # first to use the arrows");
+    return;
+  }
   value++;
   console.log(value);
   if (value < 1455) {
