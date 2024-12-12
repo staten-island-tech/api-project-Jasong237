@@ -2,15 +2,20 @@
 module.exports = {
   content: ["./index.html", "./main.js", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    fontSize: {
+      md: [".75rem", "1.5rem"],
+      lg: ["1.5rem", "2.75rem"],
+      xl: ["2.5rem", "3.5rem"],
+    },
     extend: {
       keyframes: {
         pulse: {
           "0%, 100%": { transform: "scale(100%)" },
           "50%": { transform: "scale(105%)" },
         },
-        spin: {},
-        animation: {
-          spin: "spin 1s linear",
+        bounce: {
+          "0%, 100%": { transform: "scale(100%)" },
+          "50%": { transform: "scale(105%)" },
         },
       },
     },
