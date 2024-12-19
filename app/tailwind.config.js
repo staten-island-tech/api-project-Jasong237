@@ -8,15 +8,22 @@ module.exports = {
       xl: ["2.5rem", "3.5rem"],
     },
     extend: {
+      animation: {
+        spinslow: "spin 2s linear infinite",
+      },
       keyframes: {
         pulse: {
           "0%, 100%": { transform: "scale(100%)" },
           "50%": { transform: "scale(105%)" },
         },
+<<<<<<< Updated upstream
         bounce: {
           "0%, 100%": { transform: "scale(100%)" },
           "50%": { transform: "scale(105%)" },
         },
+=======
+        spin: {},
+>>>>>>> Stashed changes
       },
     },
   },

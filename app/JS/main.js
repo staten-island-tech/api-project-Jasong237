@@ -43,9 +43,15 @@ function addCards(quote) {
   DOMSelectors.container.insertAdjacentHTML(
     "beforeend",
     `
+<<<<<<< Updated upstream:app/JS/main.js
     <div class="card lg:w-[30rem] lg:h-[40rem] md:w-[15rem] md:h-[24rem] w-[12rem] md:h-[18rem] border-secondary my-10 border-8 bg-primary shadow-xl hover:animate-bounce animate-pulse">
     <h4 class="card-title underline text-center md:text-md lg:text-lg"> ${quote.author} </h4>
     <h5 class="card-normal text-center lg:text-xl md:text-lg"> ${quote.quote} </h5>
+=======
+    <div class="card w-[25%] h-[75%] min-h-[45rem] border-secondary border-8 bg-primary shadow-xl hover:animate-bounce animate-pulse">
+    <h1 class="card-title font-bold"> ${quote.author} </h1>
+    <h2 class="card-normal"> ${quote.quote} </h2>
+>>>>>>> Stashed changes:app/main.js
     <p class="card-id"> ID: ${quote.id} </p>
     </div>
     `
